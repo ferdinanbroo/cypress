@@ -1,0 +1,19 @@
+name : E2E on Chrome
+on : [push]
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress run
+        uses: Cypress-io/github-action@v3
+        with:
+          project: ./site
+          browser: Chrome
+          build: yarn build
+          start: yarn start
+          wait on: "http://localhost:3000"
+          
