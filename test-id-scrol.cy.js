@@ -1,0 +1,25 @@
+
+describe('template spec', () => {
+  it('passes', () => {
+    cy.visit('https://instagram.com')
+    cy.get('.x1q0g3np.x1oa3qoh > :nth-child(1) > .x1i10hfl')
+      .click()
+    cy.get(':nth-child(1) > .xnz67gz > ._aa48 > ._aa4b')
+      .type(Cypress.env('username'))
+      .should('have.value', Cypress.env('username'))
+    cy.get(':nth-child(2) > .xnz67gz > ._aa48 > ._aa4b')
+      .type(Cypress.env('password'),{log : false})
+      .should('have.value', Cypress.env('password'),{log : false})
+    cy.get(':nth-child(3) > ._acan')
+      .click()
+    cy.get('.x1iyjqo2 > :nth-child(1) > :nth-child(1) > .x4k7w5x > .x1n2onr6.x6s0dn4 > .x1i10hfl > .x3nfvp2')
+      .click()
+    cy.wait(10000)
+    cy.get('._a9_1')
+      .click()
+    cy.get(':nth-child(8) > :nth-child(1) > .x4k7w5x > .x1n2onr6.x6s0dn4 > .x1i10hfl > .x3nfvp2')
+      .click()
+    //to take screenshot
+    // cy.screenshot()
+  })
+})
